@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"termux-create-package: Utility to create .deb files."
+"linuxdroid-create-package: Utility to create .deb files."
 
 import argparse
 import io
@@ -76,7 +76,7 @@ def create_debfile(debfile_output, directory):
                            directory + '/data.tar.xz'
                           ])
 
-DESCRIPTION = """Create a Termux package from a JSON manifest file. Example of manifest:
+DESCRIPTION = """Create a Linuxdroid package from a JSON manifest file. Example of manifest:
 {
   "name": "mypackage",
   "version": "0.1",
@@ -96,17 +96,17 @@ The "maintainer", "description", "homepage", "depends", "provides" and "conflict
 
 The "depends" field should be a comma-separated list of packages that this package depends on. They will be installed automatically when this package is installed using apt.
 
-The "arch" field defaults to "all" (that is, a platform-independent package not containing native code) and can be any of arm/i686/aarch64/x86_64.  Run "uname -m" to find out arch name if building native code inside Termux.
+The "arch" field defaults to "all" (that is, a platform-independent package not containing native code) and can be any of arm/i686/aarch64/x86_64.  Run "uname -m" to find out arch name if building native code inside Linuxdroid.
 
 The "files" map is keyed from paths to files to include (relative to the current directory) while the values contains the paths where the files should end up after installation (relative to $PREFIX).
 
-The resulting .deb file can be installed by Termux users with:
+The resulting .deb file can be installed by Linuxdroid users with:
   apt install ./package-file.deb
-or by hosting it in an apt repository using the termux-apt-repo tool."""
+or by hosting it in an apt repository using the linuxdroid-apt-repo tool."""
 
 def main(argv):
     "Generate a deb file from a JSON manifest."
-    installation_prefix = "/data/data/com.termux/files/usr/"
+    installation_prefix = "/data/data/com.linuxdroid/files/usr/"
 
     parser = argparse.ArgumentParser(description=DESCRIPTION,
                                      formatter_class=argparse.RawTextHelpFormatter)
