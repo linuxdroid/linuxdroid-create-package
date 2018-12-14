@@ -1,4 +1,4 @@
-termux-create-package
+mininix-deb-packager
 =====================
 
 A tool to create lightweight deb packages.
@@ -11,18 +11,18 @@ distribution such as Debian or Ubuntu.
 Prerequisites
 -------------
 
-Install it with ``apt install termux-create-package`` to use inside
+Install it with ``apt install mininix-deb-packager`` to use inside
 Termux.
 
 If you want to run this tool in a non-Termux environment (Linux/macOS),
-install with ``pip3 install termux-create-package`` after making sure
+install with ``pip3 install mininix-deb-packager`` after making sure
 that Python 3 is installed.
 
 Usage
 -----
 
 This tool expects packages to be defined in JSON manifest files. Run
-``termux-create-package -h`` for more information.
+``mininix-deb-packager -h`` for more information.
 
 An example manifest file is given below:
 
@@ -66,7 +66,7 @@ The fields are as follows:
 Run the following command to create a package file named
 ``${name}_${version}_all.deb``::
 
-    $ termux-create-package manifest.json
+    $ mininix-deb-packager manifest.json
 
 This can then be installed in Termux using the command::
 
